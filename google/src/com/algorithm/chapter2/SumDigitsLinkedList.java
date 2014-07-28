@@ -32,17 +32,15 @@ public class SumDigitsLinkedList {
         {
             return null;
         }
-        LinkedListNodeInt head = new LinkedListNodeInt(carry, null,null);
+        LinkedListNodeInt head = new LinkedListNodeInt(null, null,null);
         int value = carry;
-        while(node1 != null)
+        if(node1 != null)
         {
             value += node1.getData();
-            node1 = node1.next();
         }
-        while(node2 != null)
+        if(node2 != null)
         {
             value += node2.getData();
-            node2 = node2.next();
         }
         head.setData(value%10);
         LinkedListNodeInt res = calc(node1 != null ? node1.next() : null, node2 != null ? node2.next() : null, value > 10 ? 1 : 0);
